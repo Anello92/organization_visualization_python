@@ -1,0 +1,29 @@
+lines.color: 4e5d6c
+patch.edgecolor: 4e5d6c
+
+text.color: df691b
+
+axes.facecolor: 2b3e50
+axes.edgecolor: 4e5d6c
+axes.labelcolor: df691b
+
+### ALTERAÇÃO NO SET COLORS axes.prop_cycle
+#axes.color_cycle: df691b, 5cb85c, 5bc0de, f0ad4e, d9534f, 4e5d6c
+axes.prop_cycle : cycler('color', ['b', 'g', 'r', 'c', 'm', 'y', 'k'])
+axes.axisbelow: True
+
+xtick.color: 8c949d
+ytick.color: 8c949d
+
+grid.color: 4e5d6c
+
+figure.facecolor: 2b3e50
+figure.edgecolor: 2b3e50
+
+savefig.facecolor: 2b3e50
+savefig.edgecolor: 2b3e50
+
+legend.fancybox: True
+legend.shadow: True
+legend.frameon: True
+legend.framealpha: 0.6
