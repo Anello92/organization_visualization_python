@@ -70,7 +70,7 @@ def make_autos_mpg_plot(figure, gs = None, pddata = None, axes = None):
     if not axes:
         axes = figure.add_subplot(gs[0, 0])
     data = geradados.get_numeric_data(pddata)
-    axes.set_title("Ranges of Cidades e Velocidade", fontsize = 20)
+    axes.set_title("Ranges of Cities and Speed", fontsize = 20)
     axes.scatter(data["make"], data["highway mpg"], c = colors[3], s = 500, alpha = 0.4)
     axes.scatter(data["make"], data["city mpg"], c = colors[0], s = 500, alpha = 0.4)
     axes.set_xticks(range(0, 13))
