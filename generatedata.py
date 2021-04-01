@@ -3,15 +3,15 @@ import pandas as pd
 
 limited_columns = ["make","price","city mpg","highway mpg","horsepower","weight","riskiness","losses"]
 
-# obter nome das variáveis
+# get variables name
 def get_make_names(data):
     return sorted(list(pd.Series(data["make"]).unique()))
 
-# obter labels
+# get labels
 def get_make_labels(data):
     return [x.title() for x in get_make_names(data)]
 
-# executar mampeamento
+# execute mapping
 def get_make_id_map(data):
     return {x:i for (i,x) in enumerate(get_make_names(data))}
 
@@ -19,7 +19,7 @@ def get_make_id_map(data):
 def get_make_ids(data):
     return sorted(get_make_id_map(data).values())
 
-# obter dados
+# get data
 def get_raw_data():
     data_file = "data/carros.csv"
     return pd.read_csv(data_file)
@@ -28,7 +28,7 @@ def get_raw_data():
 def get_make_data(make, pddata):
     return pddata[(pddata["make"] == make)]
 
-# obter contagem
+# get count
 def get_make_counts(pddata, lower_bound=0):
     counts = []
     filtered_makes = []
@@ -40,7 +40,7 @@ def get_make_counts(pddata, lower_bound=0):
             counts.append(count)
     return (filtered_makes, list(zip(filtered_makes, counts)))
 
-# verificar dados limitados
+# check limited data
 def get_limited_data(cols = None, lower_bound = None):
     if not cols:
         cols = limited_columns
@@ -57,7 +57,7 @@ def norm_column(col_name, pddata, inverted = False):
     if inverted:
         pddata[col_name] = 1 - pddata[col_name]
 
-# normalizar colunas
+# normalize columns
 def norm_columns(col_names, pddata):
     for col in col_names:
         norm_column(col, pddata)
